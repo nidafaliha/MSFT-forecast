@@ -12,7 +12,7 @@ The models are compared using MAE and RMSE. The best model is then used to produ
 # Team Member
 - [Nida Faliha](https://github.com/nidafaliha)
 - [Nabeel Pasha](https://github.com/NabeelPasha)
-- [Jamihla Poukone](https://github.com/jamihlapoukone)
+- [Jamihla Poukone](https://github.com/poukonenteintiejamihla)
 - 
 # The Dataset
 Source: Yahoo Finance
