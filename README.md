@@ -1,4 +1,4 @@
-# MSFT-forecast
+# MSFT-Forecast
 
 # About the Project
 This project studies Microsoft (MSFT) monthly stock prices using data from Yahoo Finance. The main goal is to compare several forecasting models and find which one gives the most accurate prediction.
