@@ -10,7 +10,7 @@ The project first examines the data pattern, including trend, seasonality, and s
 The models are compared using MAE and RMSE. The best model is then used to produce the final 12-month forecast for Microsoft stock prices.
 
 # Team Member
-
+[Nida Faliha](https://github.com/nidafaliha)
 
 # The Dataset
 Source: Yahoo Finance
