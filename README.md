@@ -11,7 +11,7 @@ The models are compared using MAE and RMSE. The best model is then used to produ
 
 # Team Member
 [Nida Faliha](https://github.com/nidafaliha)
-
+[Nabeel Pasha](https://github.com/NabeelPasha)
 # The Dataset
 Source: Yahoo Finance
 Ticker: MSFT
