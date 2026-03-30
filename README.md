@@ -56,6 +56,14 @@ Unit of analysis: Monthly Microsoft stock prices
 5. Best model selection
 6. Final 12-month Microsoft stock price forecast
 
+# Result
+1. Microsoft’s monthly stock price shows an upward trend.
+2. The data does not show strong seasonality, the original series is not stationary.
+3. After first differencing the log series, the data becomes stationary.
+4. Four models were compared: Holt, Holt-Winters Additive, Holt-Winters Multiplicative, and ARIMA.
+5. Holt gave the lowest RMSE, so it is the best model.
+6. The final forecast suggests that Microsoft’s stock price may keep increasing during 2026.
+
 
 
 
