@@ -2,7 +2,7 @@
 # Forecasting Microsoft (MSFT) Monthly Stock Prices
 # Using Holt's Method and ARIMA in R
 
-# 1. Load packages
+# Load packages
 library(quantmod)
 library(forecast)
 library(Metrics)
@@ -25,19 +25,19 @@ msft_ts <- ts(as.numeric(msft_monthly),start = c(2020, 1),frequency = 12)
 # Plot the monthly series
 plot(msft_ts, type = "l", col = "blue",main = "Microsoft (MSFT) Monthly Close Price",xlab = "Year", ylab = "Price")
 
-# 5. Identify patterns
+# Identify patterns
 # Trend and seasonality check
 ndiffs(msft_ts)     # number of differences needed for trend stationarity
 nsdiffs(msft_ts)    # seasonal differences needed
 
-# 6. Stationarity test using KPSS
+# Stationarity test using KPSS
 summary(ur.kpss(msft_ts))
 
 # First difference of log series
 dlog_msft <- diff(log(msft_ts))
 summary(ur.kpss(dlog_msft))
 
-# 7. Split into training and test set (75% train, 25% test)
+# Split into training and test set (75% train, 25% test)
 n = length(msft_ts)
 train_size = floor(0.75 * n)
 h = n - train_size
@@ -48,14 +48,14 @@ test_ts  <- window(msft_ts, start = time(msft_ts)[train_size + 1])
 length(train_ts)
 length(test_ts)
 
-# 8. Model 1: Holt's method
+# Model 1: Holt's method
 holt_model = holt(train_ts, h = h)
 
 # Plot Holt forecast vs actual
 plot(holt_model, main = "Holt Forecast vs Actual")
 lines(test_ts, col = "red")
 
-# 9. Model 2: ARIMA
+# Model 2: ARIMA
 arima_model <- auto.arima(train_ts)
 summary(arima_model)
 
@@ -69,7 +69,7 @@ arima_forecast <- forecast(arima_model, h = h)
 plot(arima_forecast, main = "ARIMA Forecast vs Actual")
 lines(test_ts, col = "red")
 
-# 10. Accuracy comparison
+# Accuracy comparison
 holt_mae  <- mae(as.numeric(test_ts), as.numeric(holt_model$mean))
 holt_rmse <- rmse(as.numeric(test_ts), as.numeric(holt_model$mean))
 
@@ -101,7 +101,7 @@ best_model <- results$Model[which.min(results$RMSE)]
 print(best_model)
 
 
-# 12. Residual diagnostics
+# Residual diagnostics
 checkresiduals(holt_model)
 checkresiduals(arima_model)
 
